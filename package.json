@@ -25,6 +25,7 @@
     "pnpm": ">=8.15.1"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.12.0",
     "@nuxt/test-utils": "^3.11.0",
     "@quero/eslint-config-nuxt": "^1.1.2",
     "@quero/stylelint-config-base": "2.0.2",
