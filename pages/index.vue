@@ -2,24 +2,42 @@
 
 <template>
   <main>
-    <h1>imagina uma home page linda</h1>
+    <h1>JP点々</h1>
 
-    olha que linda, nossa! realmente, o hoyer se superou, como ta bonita essa
-    home page!
+    <p>
+      点々(てんてん) is the colloquial term for
+      濁点(だくてん), which is a diacritic used in Japanese
+      to indicate that the consonant of a syllable should be pronounced voiced.
+      So it's a good play on words, you know? Japanese, but voiced, you know?
+      Or rather sang.
+    </p>
+    <p>
+      This project is also inspired by <a href="https://jpmarumaru.com">jpmarumaru.com</a>,
+      which, in turn, use the name marumaru and 丸(まる) is
+      the colloquial term for 半濁点(はんだくてん), which
+      is another diacritic that is usually taught together with
+      濁点(だくてん), so I think the name is very fitting,
+      anyway, rejoice.
+    </p>
 
-    <hr>
+    <hr class="my-0300">
 
-    <div
-      style="display: grid; gap: 16px; grid-template-columns: 1fr 1fr"
+    <h2>song list</h2>
+
+    <ContentList
+      v-slot="{ list }"
+      path="/lyrics"
     >
-      <button style="margin-top: 16px">
-        back
-      </button>
-      <button
-        style="margin-top: 16px"
-      >
-        next
-      </button>
-    </div>
+      <ul>
+        <li
+          v-for="item in list"
+          :key="item._path"
+        >
+          <NuxtLink :to="item._path">
+            {{ item.title }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </ContentList>
   </main>
 </template>
