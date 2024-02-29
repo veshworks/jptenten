@@ -17,13 +17,9 @@ definePageMeta({
       class="my-0500"
     />
 
-    <ul>
-      <li
-        v-for="(item, index) in doc.lyrics"
-        :key="index"
-      >
-        {{ item }}
-      </li>
-    </ul>
+    <SongLyrics
+      :lyrics="doc.lyrics"
+      :current-time="0"
+    />
   </ContentDoc>
 </template>
