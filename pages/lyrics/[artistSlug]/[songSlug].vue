@@ -2,6 +2,8 @@
 definePageMeta({
   titleTemplate: '%s | 歌詞',
 });
+
+const route = useRoute();
 </script>
 
 <template>
@@ -17,7 +19,12 @@ definePageMeta({
       class="my-0500"
     />
 
+    <SongLyricsEditor
+      v-if="route.query.edit"
+      :lyrics="doc.lyrics"
+    />
     <SongLyrics
+      v-else
       :lyrics="doc.lyrics"
     />
   </ContentDoc>

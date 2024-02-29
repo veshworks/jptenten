@@ -1,143 +1,189 @@
 title: カルマ - Bump of chicken
 player:
   type: youtube
-  source: eeqLI40jFJk
+  source: mTdcxQZcQAE
 lyrics:
   - kanji: ガラス玉ひとつ 落とされた
     translation: a glass ball falls
-    start: 00:00.000
+    start: 00:20.309
+    stop: 00:22.77
   - kanji: 追いかけてもうひとつ 落っこちた
-    en: a glass ball falls
-    start: 00:01.000
+    translation: a glass ball falls
+    start: 00:22.77
+    stop: 00:25.186
   - kanji: ひとつ分の陽だまりに
-    en: a glass ball falls
-    start: 00:03.000
+    translation: a glass ball falls
+    start: 00:25.186
+    stop: 00:27.726
   - kanji: ひとつだけ残ってる
-    en: a glass ball falls
-    start: 00:05.000
+    translation: a glass ball falls
+    start: 00:27.726
+    stop: 00:30.373
   - kanji: 心臓が始まった時
-    en: a glass ball falls
-    start: 00:07.000
+    translation: a glass ball falls
+    start: 00:30.373
+    stop: 00:32.73
   - kanji: 嫌でも人は場所を取る
-    en: a glass ball falls
-    start: 00:09.000
+    translation: a glass ball falls
+    start: 00:32.73
+    stop: 00:35.182
   - kanji: 奪われない様に 守り続けてる
-    en: a glass ball falls
-    start: 00:11.000
+    translation: a glass ball falls
+    start: 00:35.182
+    stop: 00:39.51
   - kanji: 汚さずに保ってきた手でも
-    en: a glass ball falls
-    start: 00:13.000
+    translation: a glass ball falls
+    start: 00:39.51
+    stop: 00:42.646
   - kanji: 汚れて見えた
-    en: a glass ball falls
-    start: 00:15.000
+    translation: a glass ball falls
+    start: 00:42.646
+    stop: 00:44.437
   - kanji: 記憶を疑う前に 記憶に疑われてる
-    en: a glass ball falls
-    start: 00:17.000
+    translation: a glass ball falls
+    start: 00:44.437
+    stop: 00:50.218
   - kanji: 必ず僕らは出会うだろう
-    en: a glass ball falls
-    start: 00:19.000
+    translation: a glass ball falls
+    start: 00:50.218
+    stop: 00:54.922
   - kanji: 同じ鼓動の音を目印にして
-    en: a glass ball falls
-    start: 00:21.000
+    translation: a glass ball falls
+    start: 00:54.922
+    stop: 00:59.437
   - kanji: ここに居るよ
-    en: a glass ball falls
-    start: 00:23.000
+    translation: a glass ball falls
+    start: 00:59.437
+    stop: 01:2.026
   - kanji: いつだって呼んでるから
-    en: a glass ball falls
-    start: 00:25.000
+    translation: a glass ball falls
+    start: 01:2.026
+    stop: 01:4.469
   - kanji: くたびれた理由が重なって揺れる時
-    en: a glass ball falls
-    start: 00:27.000
+    translation: a glass ball falls
+    start: 01:4.469
+    stop: 01:9.178
   - kanji: 生まれた意味を知る
-    en: a glass ball falls
-    start: 00:29.000
+    translation: a glass ball falls
+    start: 01:9.178
+    stop: 01:12.434
   - kanji: 存在が続く限り
-    en: a glass ball falls
-    start: 00:31.000
+    translation: a glass ball falls
+    start: 01:12.434
+    stop: 01:14.782
   - kanji: 仕方無いから場所を取る
-    en: a glass ball falls
-    start: 00:33.000
+    translation: a glass ball falls
+    start: 01:14.782
+    stop: 01:17.265
   - kanji: ひとつ分の陽だまりに
-    en: a glass ball falls
-    start: 00:35.000
+    translation: a glass ball falls
+    start: 01:17.265
+    stop: 01:19.677
   - kanji: ふたつはちょっと入れない
-    en: a glass ball falls
-    start: 00:37.000
+    translation: a glass ball falls
+    start: 01:19.677
+    stop: 01:22.11
   - kanji: ガラス玉ひとつ 落とされた
-    en: a glass ball falls
-    start: 00:39.000
+    translation: a glass ball falls
+    start: 01:22.11
+    stop: 01:24.561
   - kanji: 落ちた時 何か弾き出した
-    en: a glass ball falls
-    start: 00:41.000
+    translation: a glass ball falls
+    start: 01:24.561
+    stop: 01:27.158
   - kanji: 奪い取った場所で 光を浴びた
-    en: a glass ball falls
-    start: 00:43.000
+    translation: a glass ball falls
+    start: 01:27.158
+    stop: 01:31.53
   - kanji: 数えた足跡など
-    en: a glass ball falls
-    start: 00:45.000
+    translation: a glass ball falls
+    start: 01:31.53
+    stop: 01:33.945
   - kanji: 気付けば数字でしか無い
-    en: a glass ball falls
-    start: 00:47.000
+    translation: a glass ball falls
+    start: 01:33.945
+    stop: 01:36.465
   - kanji: 知らなきゃいけない事は
-    en: a glass ball falls
-    start: 00:49.000
+    translation: a glass ball falls
+    start: 01:36.465
+    stop: 01:38.857
   - kanji: どうやら1と0の間
-    en: a glass ball falls
-    start: 00:51.000
+    translation: a glass ball falls
+    start: 01:38.857
+    stop: 01:42.09
   - kanji: 初めて僕らは出会うだろう
-    en: a glass ball falls
-    start: 00:53.000
+    translation: a glass ball falls
+    start: 01:42.09
+    stop: 01:46.753
   - kanji: 同じ悲鳴の旗を目印にして
-    en: a glass ball falls
-    start: 00:55.000
+    translation: a glass ball falls
+    start: 01:46.753
+    stop: 01:51.381
   - kanji: 忘れないで
-    en: a glass ball falls
-    start: 00:57.000
+    translation: a glass ball falls
+    start: 01:51.381
+    stop: 01:54.277
   - kanji: いつだって呼んでるから
-    en: a glass ball falls
-    start: 00:59.000
+    translation: a glass ball falls
+    start: 01:54.277
+    stop: 01:56.766
   - kanji: 重ねた理由を二人で埋める時
-    en: a glass ball falls
-    start: 01:1.000
+    translation: a glass ball falls
+    start: 01:56.766
+    stop: 02:1.377
   - kanji: 約束が交わされる
-    en: a glass ball falls
-    start: 01:3.000
+    translation: a glass ball falls
+    start: 02:1.377
+    stop: 02:4.437
   - kanji: 鏡なんだ 僕ら互いに
-    en: a glass ball falls
-    start: 01:5.000
+    translation: a glass ball falls
+    start: 02:4.437
+    stop: 02:9.605
   - kanji: それぞれのカルマを 映す為の
-    en: a glass ball falls
-    start: 01:7.000
+    translation: a glass ball falls
+    start: 02:9.605
+    stop: 02:14.601
   - kanji: 汚れた手と手で 触り合って
-    en: a glass ball falls
-    start: 01:9.000
+    translation: a glass ball falls
+    start: 02:14.601
+    stop: 02:19.501
   - kanji: 形が解る
-    en: a glass ball falls
-    start: 01:11.000
+    translation: a glass ball falls
+    start: 02:19.501
+    stop: 02:23.581
   - kanji: ここに居るよ 確かに触れるよ
-    en: a glass ball falls
-    start: 01:13.000
+    translation: a glass ball falls
+    start: 02:23.581
+    stop: 02:28.845
   - kanji: 一人分の陽だまりに 僕らは居る
-    en: a glass ball falls
-    start: 01:15.000
+    translation: a glass ball falls
+    start: 02:28.845
+    stop: 02:33.386
   - kanji: 忘れないで
-    en: a glass ball falls
-    start: 01:17.000
+    translation: a glass ball falls
+    start: 02:33.386
+    stop: 02:36.185
   - kanji: いつだって呼んでるから
-    en: a glass ball falls
-    start: 01:19.000
+    translation: a glass ball falls
+    start: 02:36.185
+    stop: 02:38.67
   - kanji: 同じガラス玉の内側の方から
-    en: a glass ball falls
-    start: 01:21.000
+    translation: a glass ball falls
+    start: 02:38.67
+    stop: 02:43.382
   - kanji: そうさ 必ず僕らは出会うだろう
-    en: a glass ball falls
-    start: 01:23.000
+    translation: a glass ball falls
+    start: 02:43.382
+    stop: 02:48.617
   - kanji: 沈めた理由に十字架を建てる時
-    en: a glass ball falls
-    start: 01:25.000
+    translation: a glass ball falls
+    start: 02:48.617
+    stop: 02:53.301
   - kanji: 約束は果たされる
-    en: a glass ball falls
-    start: 01:27.000
+    translation: a glass ball falls
+    start: 02:53.301
+    stop: 02:58.161
   - kanji: 僕らはひとつになる
-    en: a glass ball falls
-    start: 01:29.000
+    translation: a glass ball falls
+    start: 02:58.161
+    stop: 03:6.165
