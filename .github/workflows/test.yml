@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: true
-      ANY_PERCENT_NPM_TOKEN: ${{ secrets.ANY_PERCENT_NPM_TOKEN }}
-      VHOYER_FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.VHOYER_FONTAWESOME_NPM_AUTH_TOKEN }}
     steps:
     - uses: actions/checkout@main
 

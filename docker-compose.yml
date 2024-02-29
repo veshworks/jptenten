@@ -4,9 +4,6 @@ services:
   app:
     tty: true
     stdin_open: true
-    environment:
-      - VHOYER_FONTAWESOME_NPM_AUTH_TOKEN
-      - ANY_PERCENT_NPM_TOKEN
     build:
       args:
         - NODE_VERSION
