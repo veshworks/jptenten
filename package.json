@@ -22,7 +22,7 @@
   "author": "Vinícius Hoyer <contact@vhoyer.dev>",
   "engines": {
     "node": ">=20.4.0",
-    "pnpm": ">=8.15.1"
+    "pnpm": ">=8.14.1"
   },
   "devDependencies": {
     "@nuxt/content": "^2.12.0",
