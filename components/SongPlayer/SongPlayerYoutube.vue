@@ -57,27 +57,52 @@ watch(() => playerStore.requestedTime, (time) => {
   player.value?.seekTo(time);
 });
 
-const currentTimeTimeout = ref<any>(null);
+const getPlayerState = () => {
+  return ({
+    '-1': 'paused', // 'unstarted'
+    '0': 'paused', // 'ended'
+    '1': 'playing',
+    '2': 'paused',
+    '3': 'playing', // 'buffering'
+    '5': 'playing', // 'video cued'
+  } as const)[String(player.value?.getPlayerState())] ?? 'paused';
+};
+
+watch(() => playerStore.requestedState, (state) => {
+  if (state === null) return; // prevent loop
+
+  playerStore.actualState = getPlayerState();
+  playerStore.requestedState = null;
+
+  if (state === 'playing') {
+    player.value?.playVideo();
+  } else if (state === 'paused') {
+    player.value?.pauseVideo();
+  }
+});
+
+const playerStoreUpdateTimeout = ref<any>(null);
 
 watch(player, () => {
   if (player.value === null) {
-    if (currentTimeTimeout.value) {
-      clearInterval(currentTimeTimeout.value);
+    if (playerStoreUpdateTimeout.value) {
+      clearInterval(playerStoreUpdateTimeout.value);
     }
 
     return;
   }
 
-  currentTimeTimeout.value = setInterval(() => {
+  playerStoreUpdateTimeout.value = setInterval(() => {
     if (!player.value) return;
     if (typeof player.value.getCurrentTime !== 'function') return;
 
     playerStore.actualTime = player.value?.getCurrentTime();
+    playerStore.actualState = getPlayerState();
   }, 1);
 });
 
 onUnmounted(() => {
-  clearInterval(currentTimeTimeout.value);
+  clearInterval(playerStoreUpdateTimeout.value);
 });
 </script>
 

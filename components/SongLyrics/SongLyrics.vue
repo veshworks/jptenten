@@ -31,8 +31,13 @@ const lyrics = computed(() => {
 
 function isBetween(start: number, stop: number) {
   return player.currentTime >= start
-    && player.currentTime <= stop;
+    && player.currentTime < stop;
 }
+
+const playAt = (time: number) => {
+  player.currentTime = time;
+  player.currentState = 'playing';
+};
 </script>
 
 <template>
@@ -47,12 +52,16 @@ function isBetween(start: number, stop: number) {
       <div>{{ item.kanji }}</div>
 
       <button
-        @click="player.currentTime = item.start"
+        @click="playAt(item.start)"
       >
-        play ({{ item.start }})
+        play
       </button>
 
-      <button>pause</button>
+      <button
+        @click="player.currentState = 'paused'"
+      >
+        pause
+      </button>
     </div>
   </div>
 </template>
