@@ -1,13 +1,17 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   type: 'youtube';
   source: string;
+  title: string;
 }>();
 </script>
 
 <template>
-  <SongPlayerYoutube
-    v-if="type === 'youtube'"
-    :source="source"
-  />
+  <div>
+    <SongPlayerYoutube
+      v-if="props.type === 'youtube'"
+      :id="props.source"
+      :title="props.title"
+    />
+  </div>
 </template>

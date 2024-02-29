@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const props = defineProps<{
-  currentTime: number;
   lyrics: {
     kanji: string;
     translation: string;
@@ -8,6 +7,13 @@ const props = defineProps<{
     stop: string;
   }[];
 }>();
+
+const player = usePlayerStore();
+
+function isBetween(start: string, stop: string) {
+  return player.currentTime >= parseInt(start, 10)
+    && player.currentTime <= parseInt(stop, 10);
+}
 </script>
 
 <template>
@@ -15,6 +21,9 @@ const props = defineProps<{
     <div
       v-for="(item) in props.lyrics"
       :key="item.start"
+      :class="{
+        'lyrics__line--active': isBetween(item.start, item.stop)
+      }"
     >
       {{ item.kanji }}
     </div>

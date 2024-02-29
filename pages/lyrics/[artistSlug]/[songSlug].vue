@@ -14,12 +14,12 @@ definePageMeta({
 
     <SongPlayer
       v-bind="doc.player"
+      :title="doc.title"
       class="my-0500"
     />
 
     <SongLyrics
       :lyrics="doc.lyrics"
-      :current-time="0"
     />
   </ContentDoc>
 </template>
