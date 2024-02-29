@@ -5,185 +5,139 @@ player:
 lyrics:
   - kanji: ガラス玉ひとつ 落とされた
     translation: a glass ball falls
-    start: '00:00.000'
-    stop: '00:00.000'
+    start: 00:00.000
   - kanji: 追いかけてもうひとつ 落っこちた
     en: a glass ball falls
-    start: '00:01.000'
-    stop: '00:02.000'
+    start: 00:01.000
   - kanji: ひとつ分の陽だまりに
     en: a glass ball falls
-    start: '00:03.000'
-    stop: '00:04.000'
+    start: 00:03.000
   - kanji: ひとつだけ残ってる
     en: a glass ball falls
-    start: '00:05.000'
-    stop: '00:06.000'
+    start: 00:05.000
   - kanji: 心臓が始まった時
     en: a glass ball falls
-    start: '00:07.000'
-    stop: '00:08.000'
+    start: 00:07.000
   - kanji: 嫌でも人は場所を取る
     en: a glass ball falls
-    start: '00:09.000'
-    stop: '00:10.000'
+    start: 00:09.000
   - kanji: 奪われない様に 守り続けてる
     en: a glass ball falls
-    start: '00:11.000'
-    stop: '00:12.000'
+    start: 00:11.000
   - kanji: 汚さずに保ってきた手でも
     en: a glass ball falls
-    start: '00:13.000'
-    stop: '00:14.000'
+    start: 00:13.000
   - kanji: 汚れて見えた
     en: a glass ball falls
-    start: '00:15.000'
-    stop: '00:16.000'
+    start: 00:15.000
   - kanji: 記憶を疑う前に 記憶に疑われてる
     en: a glass ball falls
-    start: '00:17.000'
-    stop: '00:18.000'
+    start: 00:17.000
   - kanji: 必ず僕らは出会うだろう
     en: a glass ball falls
-    start: '00:19.000'
-    stop: '00:20.000'
+    start: 00:19.000
   - kanji: 同じ鼓動の音を目印にして
     en: a glass ball falls
-    start: '00:21.000'
-    stop: '00:22.000'
+    start: 00:21.000
   - kanji: ここに居るよ
     en: a glass ball falls
-    start: '00:23.000'
-    stop: '00:24.000'
+    start: 00:23.000
   - kanji: いつだって呼んでるから
     en: a glass ball falls
-    start: '00:25.000'
-    stop: '00:26.000'
+    start: 00:25.000
   - kanji: くたびれた理由が重なって揺れる時
     en: a glass ball falls
-    start: '00:27.000'
-    stop: '00:28.000'
+    start: 00:27.000
   - kanji: 生まれた意味を知る
     en: a glass ball falls
-    start: '00:29.000'
-    stop: '00:30.000'
+    start: 00:29.000
   - kanji: 存在が続く限り
     en: a glass ball falls
-    start: '00:31.000'
-    stop: '00:32.000'
+    start: 00:31.000
   - kanji: 仕方無いから場所を取る
     en: a glass ball falls
-    start: '00:33.000'
-    stop: '00:34.000'
+    start: 00:33.000
   - kanji: ひとつ分の陽だまりに
     en: a glass ball falls
-    start: '00:35.000'
-    stop: '00:36.000'
+    start: 00:35.000
   - kanji: ふたつはちょっと入れない
     en: a glass ball falls
-    start: '00:37.000'
-    stop: '00:38.000'
+    start: 00:37.000
   - kanji: ガラス玉ひとつ 落とされた
     en: a glass ball falls
-    start: '00:39.000'
-    stop: '00:40.000'
+    start: 00:39.000
   - kanji: 落ちた時 何か弾き出した
     en: a glass ball falls
-    start: '00:41.000'
-    stop: '00:42.000'
+    start: 00:41.000
   - kanji: 奪い取った場所で 光を浴びた
     en: a glass ball falls
-    start: '00:43.000'
-    stop: '00:44.000'
+    start: 00:43.000
   - kanji: 数えた足跡など
     en: a glass ball falls
-    start: '00:45.000'
-    stop: '00:46.000'
+    start: 00:45.000
   - kanji: 気付けば数字でしか無い
     en: a glass ball falls
-    start: '00:47.000'
-    stop: '00:48.000'
+    start: 00:47.000
   - kanji: 知らなきゃいけない事は
     en: a glass ball falls
-    start: '00:49.000'
-    stop: '00:50.000'
+    start: 00:49.000
   - kanji: どうやら1と0の間
     en: a glass ball falls
-    start: '00:51.000'
-    stop: '00:52.000'
+    start: 00:51.000
   - kanji: 初めて僕らは出会うだろう
     en: a glass ball falls
-    start: '00:53.000'
-    stop: '00:54.000'
+    start: 00:53.000
   - kanji: 同じ悲鳴の旗を目印にして
     en: a glass ball falls
-    start: '00:55.000'
-    stop: '00:56.000'
+    start: 00:55.000
   - kanji: 忘れないで
     en: a glass ball falls
-    start: '00:57.000'
-    stop: '00:58.000'
+    start: 00:57.000
   - kanji: いつだって呼んでるから
     en: a glass ball falls
-    start: '00:59.000'
-    stop: '01:00.000'
+    start: 00:59.000
   - kanji: 重ねた理由を二人で埋める時
     en: a glass ball falls
-    start: '01:1.000'
-    stop: '01:2.000'
+    start: 01:1.000
   - kanji: 約束が交わされる
     en: a glass ball falls
-    start: '01:3.000'
-    stop: '01:4.000'
+    start: 01:3.000
   - kanji: 鏡なんだ 僕ら互いに
     en: a glass ball falls
-    start: '01:5.000'
-    stop: '01:6.000'
+    start: 01:5.000
   - kanji: それぞれのカルマを 映す為の
     en: a glass ball falls
-    start: '01:7.000'
-    stop: '01:8.000'
+    start: 01:7.000
   - kanji: 汚れた手と手で 触り合って
     en: a glass ball falls
-    start: '01:9.000'
-    stop: '01:10.000'
+    start: 01:9.000
   - kanji: 形が解る
     en: a glass ball falls
-    start: '01:11.000'
-    stop: '01:12.000'
+    start: 01:11.000
   - kanji: ここに居るよ 確かに触れるよ
     en: a glass ball falls
-    start: '01:13.000'
-    stop: '01:14.000'
+    start: 01:13.000
   - kanji: 一人分の陽だまりに 僕らは居る
     en: a glass ball falls
-    start: '01:15.000'
-    stop: '01:16.000'
+    start: 01:15.000
   - kanji: 忘れないで
     en: a glass ball falls
-    start: '01:17.000'
-    stop: '01:18.000'
+    start: 01:17.000
   - kanji: いつだって呼んでるから
     en: a glass ball falls
-    start: '01:19.000'
-    stop: '01:20.000'
+    start: 01:19.000
   - kanji: 同じガラス玉の内側の方から
     en: a glass ball falls
-    start: '01:21.000'
-    stop: '01:22.000'
+    start: 01:21.000
   - kanji: そうさ 必ず僕らは出会うだろう
     en: a glass ball falls
-    start: '01:23.000'
-    stop: '01:24.000'
+    start: 01:23.000
   - kanji: 沈めた理由に十字架を建てる時
     en: a glass ball falls
-    start: '01:25.000'
-    stop: '01:26.000'
+    start: 01:25.000
   - kanji: 約束は果たされる
     en: a glass ball falls
-    start: '01:27.000'
-    stop: '01:28.000'
+    start: 01:27.000
   - kanji: 僕らはひとつになる
     en: a glass ball falls
-    start: '01:29.000'
-    stop: '01:30.000'
+    start: 01:29.000

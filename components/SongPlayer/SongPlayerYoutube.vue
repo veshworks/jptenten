@@ -50,8 +50,11 @@ onUnmounted(() => {
 
 const playerStore = usePlayerStore();
 
-watch(() => playerStore.requestedTime, () => {
-  player.value?.seekTo(playerStore.requestedTime);
+watch(() => playerStore.requestedTime, (time) => {
+  if (time === null) return; // prevent loop
+  playerStore.requestedTime = null;
+
+  player.value?.seekTo(time);
 });
 
 const currentTimeTimeout = ref<any>(null);

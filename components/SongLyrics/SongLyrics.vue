@@ -10,22 +10,49 @@ const props = defineProps<{
 
 const player = usePlayerStore();
 
-function isBetween(start: string, stop: string) {
-  return player.currentTime >= parseInt(start, 10)
-    && player.currentTime <= parseInt(stop, 10);
+function parseTime(timeString: string) {
+  if (timeString === '+') return Infinity;
+
+  const [minutes, seconds] = timeString.split(':').map(Number);
+  return minutes * 60 + seconds;
+}
+
+const lyrics = computed(() => {
+  return props.lyrics.map((item, index, array) => {
+    const stop = item.stop ?? array[index + 1]?.start ?? '+';
+
+    return {
+      ...item,
+      start: parseTime(item.start),
+      stop: parseTime(stop),
+    };
+  });
+});
+
+function isBetween(start: number, stop: number) {
+  return player.currentTime >= start
+    && player.currentTime <= stop;
 }
 </script>
 
 <template>
   <div class="lyrics">
     <div
-      v-for="(item) in props.lyrics"
+      v-for="(item) in lyrics"
       :key="item.start"
-      :class="{
+      :class="['lyrics__line', {
         'lyrics__line--active': isBetween(item.start, item.stop)
-      }"
+      }]"
     >
-      {{ item.kanji }}
+      <div>{{ item.kanji }}</div>
+
+      <button
+        @click="player.currentTime = item.start"
+      >
+        play ({{ item.start }})
+      </button>
+
+      <button>pause</button>
     </div>
   </div>
 </template>
@@ -36,5 +63,23 @@ function isBetween(start: string, stop: string) {
   gap: var(--space-0100);
   grid-auto-rows: min-content;
   font-size: var(--font-size-400);
+}
+
+.lyrics__line {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-0100);
+
+  button {
+    display: none;
+  }
+
+  &:hover button {
+    display: block;
+  }
+}
+
+.lyrics__line--active {
+  color: var(--color-primary-pure);
 }
 </style>
