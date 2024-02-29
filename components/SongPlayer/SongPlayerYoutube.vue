@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
   id: string;
-  title: string;
 }>();
 
 const wrapperEl = ref<HTMLElement | null>(null);
@@ -107,25 +106,27 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="container">
+  <div
+    ref="wrapperEl"
+    class="wrapper"
+  >
+    <!-- this div is replaced by an iframe by "youtube iframe api" -->
     <div
       id="song-player-youtube"
-      ref="wrapperEl"
       class="player"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container {
-  width: 100%;
-  height: 100%;
-}
-
-.player {
+.wrapper {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  background-color: var(--color-gray-100);
+  background-color: var(--color-coal-pure);
+}
+
+.player {
+  display: block; // TODO: not being applied on iframe, donno why
 }
 </style>

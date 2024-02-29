@@ -14,7 +14,6 @@ definePageMeta({
 
     <SongPlayer
       v-bind="doc.player"
-      :title="doc.title"
       class="my-0500"
     />
 
