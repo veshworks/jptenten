@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.5.1
     version: 0.5.1(typescript@5.3.3)(vue@3.4.16)
   '@vhoyer/utils':
-    specifier: ^1.3.0
-    version: 1.3.0
+    specifier: ^1.4.0
+    version: 1.4.0
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
@@ -2541,9 +2541,9 @@ packages:
     resolution: {integrity: sha512-gGjfp0sq7dZnfCTvmMM+F0A+EuSQ7NuME0Pn1l8WpBwXamW02qDcPSuXWtZlv/JqaYHeytnKLyfgkP5Dxcj7AA==}
     dev: true
 
-  /@vhoyer/utils@1.3.0:
-    resolution: {integrity: sha512-5ZNxc69s7ltkxaBEd+IzdfD7vBH3tXxFs9s+3C2715+4y1jPNNAuntDp/0HZYTSPZiLR2GLcWuBA8/t6w/sfLg==}
-    engines: {node: ^20.0.0}
+  /@vhoyer/utils@1.4.0:
+    resolution: {integrity: sha512-gMIZ7BZODu6yHZDgcXkymZJcotmLIFLrNy5knncdWVo5Udbz10as1JL+3VViFenxId1vch0JzGrgurhZszJl9w==}
+    engines: {node: '>=20.0.0'}
     dependencies:
       clone: 2.1.2
     dev: false
