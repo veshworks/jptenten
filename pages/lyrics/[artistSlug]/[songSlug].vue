@@ -12,7 +12,24 @@ const route = useRoute();
     tag="main"
     head
   >
-    <h1>{{ doc.title }}</h1>
+    <header>
+      <h1>{{ doc.title }}</h1>
+
+      <p>
+        <router-link
+          v-if="!route.query.edit"
+          :to="{ query: { edit: 'true' } }"
+        >
+          編集
+        </router-link>
+        <router-link
+          v-else
+          :to="{ query: { edit: undefined } }"
+        >
+          閉じる
+        </router-link>
+      </p>
+    </header>
 
     <SongPlayer
       v-bind="doc.player"
