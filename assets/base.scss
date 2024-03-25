@@ -44,8 +44,11 @@
   --color-sugar-pale: hsl(0deg 0% 100%);
 
   /** theme tokens ****************************/
-  --color-primary-pure-hsl: 202 66% 39%;
-  --color-primary-pure: hsl(202deg 66% 39%);
+  --color-primary-pure-hsl: 211deg 50% 35%;
+  --color-primary-pure: hsl(211deg 50% 35%);
+
+  --color-secondary-pure-hsl: 30deg 85% 65%;
+  --color-secondary-pure: hsl(30deg 85% 65%);
 
   --color-danger-deep-hsl: 348 94% 14%;
   --color-danger-deep: hsl(348deg 94% 14%);
@@ -66,6 +69,11 @@
   --font-family-highlight: 'IM Fell English SC', sans-serif;
   --font-family-body: 'Gentium Book Basic', serif;
 
+  --field-border-radius: var(--space-0050);
+  --field-border-width: 1px;
+  --field-line-height: 1.5rem;
+  --field-padding-y: var(--space-0100);
+
   /** component tokens ****************************/
   --body-color: var(--color-coal-pure);
   --body-line-height: 1.6;
@@ -78,8 +86,8 @@
 
   --button-bgcolor: var(--color-primary-pure);
   --button-color: var(--color-sugar-pure);
-  --button-border: 1px solid var(--color-primary-deep);
-  --button-padding: var(--space-0100) var(--space-0200);
+  --button-border: var(--field-border-width) solid var(--color-primary-deep);
+  --button-padding: var(--field-padding-y) var(--space-0200);
 
   @media (prefers-color-scheme: dark) {
     /** component tokens ***********************/
@@ -105,6 +113,7 @@
 }
 
 html {
+  background-color: hsl(240deg 29% 97%);
   color: var(--body-color);
   line-height: var(--body-line-height);
   font-family: var(--font-family-body);
@@ -164,6 +173,7 @@ hr {
 }
 
 button {
+  border-radius: var(--field-border-radius);
   border: var(--button-border);
   padding: var(--button-padding);
   background-color: var(--button-bgcolor);
@@ -171,7 +181,7 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.9rem;
-  line-height: 1rem;
+  line-height: var(--field-line-height);
   display: block;
   text-align: center;
   cursor: pointer;
@@ -181,8 +191,18 @@ button {
   }
 }
 
-select, input {
+fieldset {
+  border-radius: var(--field-border-radius);
+  border: var(--field-border-width) solid var(--color-ash-pure);
   padding: var(--space-0100);
+}
+
+select, input {
+  background-color: var(--color-sugar-pale);
+  border-radius: var(--field-border-radius);
+  border: var(--field-border-width) solid var(--color-ash-pure);
+  line-height: var(--field-line-height);
+  padding: var(--field-padding-y) var(--space-0100);
 }
 
 label {
