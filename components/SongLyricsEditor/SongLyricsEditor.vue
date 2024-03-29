@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { stringify } from 'yaml';
+
 type LyricsRaw = {
   kanji: string;
   translation: string;
@@ -89,12 +91,12 @@ const exportLyrics = computed(() => {
     copy.start = formatTime(copy.start);
     copy.stop = formatTime(copy.stop);
 
-    const toYalmProp = ([key, value]: [string, any]) => `${key}: ${value}`;
-
-    return '  - ' + Object.entries(copy).map(toYalmProp).join('\n    ');
+    return copy;
   });
 
-  return 'lyrics:\n' + yamlLines.join('\n');
+  return stringify({
+    lyrics: yamlLines,
+  });
 });
 </script>
 
