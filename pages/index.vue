@@ -22,7 +22,15 @@
 
     <hr class="my-0300">
 
-    <h2>song list</h2>
+    <header class="header">
+      <h2>song list</h2>
+
+      <p>
+        <NuxtLink to="/lyrics/create">
+          crete a new lyrics page
+        </NuxtLink>
+      </p>
+    </header>
 
     <ContentList
       v-slot="{ list }"
@@ -41,3 +49,10 @@
     </ContentList>
   </main>
 </template>
+
+<style scoped lang="scss">
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
