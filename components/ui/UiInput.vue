@@ -4,18 +4,8 @@ const props = defineProps<{
   label: string;
   id: string;
   type: 'text' | 'select';
-  options?: string[] | Record<string, string>;
+  options?: string[];
 }>();
-
-const options = computed(() => {
-  if (props.type !== 'select') return [];
-
-  if (Array.isArray(props.options)) {
-    return props.options.map(value => ({ value, text: value }));
-  }
-
-  return Object.entries(props.options).map(([value, text]) => ({ value, text }));
-});
 </script>
 
 <template>
@@ -25,12 +15,13 @@ const options = computed(() => {
     <select
       v-if="props.type === 'select'"
       :id="props.id"
+      v-model="value"
     >
       <option
-        v-for="option in options.value"
-        :key="option.value"
-        :value="option.value"
-        v-text="option.text"
+        v-for="item in props.options"
+        :key="item"
+        :value="item"
+        v-text="item"
       />
     </select>
     <input
