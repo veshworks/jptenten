@@ -8,7 +8,12 @@ const doc = ref({
     type: 'youtube',
     source: '',
   },
-  lyrics: [],
+  lyrics: [] as {
+    kanji: string;
+    translation: string;
+    start: string;
+    stop?: string;
+  }[],
 });
 
 // download yaml file
@@ -26,6 +31,28 @@ const onSubmit = (e: Event) => {
 
   URL.revokeObjectURL(url);
 };
+
+const lyrics = computed({
+  get: () => doc.value.lyrics.map(line => line.kanji).join('\n'),
+  set: (value: any) => {
+    doc.value.lyrics = value.split('\n').map((kanji: string) => ({
+      kanji,
+      translation: '',
+      start: '+',
+    }));
+  },
+});
+
+const translation = computed({
+  get: () => doc.value.lyrics.map(line => line.translation).join('\n'),
+  set: (value: any) => {
+    const translations = value.split('\n');
+
+    doc.value.lyrics.forEach((line, index) => {
+      line.translation = translations[index];
+    });
+  },
+});
 </script>
 
 <template>
@@ -34,7 +61,10 @@ const onSubmit = (e: Event) => {
       create
     </h1>
 
-    <form @submit.prevent="onSubmit">
+    <form
+      class="gy-0200"
+      @submit.prevent="onSubmit"
+    >
       <UiInput
         id="artist"
         v-model="doc.artist"
@@ -68,12 +98,39 @@ const onSubmit = (e: Event) => {
         />
       </fieldset>
 
-      <button type="submit">
-        download lyric file
-      </button>
+      <fieldset>
+        <legend>lyrics</legend>
+
+        <p class="mb-0200">
+          Lines between original lyrics and translation are matched by line number.
+        </p>
+
+        <div class="gx-0200">
+          <UiInput
+            id="lyrics-kanji"
+            v-model="lyrics"
+            label="Original"
+            type="textarea"
+          />
+
+          <UiInput
+            id="lyrics-translation"
+            v-model="translation"
+            label="Translation"
+            type="textarea"
+          />
+        </div>
+      </fieldset>
+
+      <div>
+        <button type="submit">
+          download lyric file
+        </button>
+      </div>
     </form>
+
+    <p class="mt-0200">
+      Open a Pull Request to add your lyric file to the <a href="https://github.com/veshworks/jptenten">jptenten</a>!
+    </p>
   </div>
 </template>
-
-<style lang="scss">
-</style>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const value = defineModel<string>();
+const value = defineModel<string>({
+  default: '',
+});
+
 const props = defineProps<{
   label: string;
   id: string;
