@@ -3,9 +3,16 @@ const value = defineModel<string>();
 const props = defineProps<{
   label: string;
   id: string;
-  type: 'text' | 'select';
+  type: 'text' | 'select' | 'textarea';
   options?: string[];
 }>();
+
+const linesShown = computed(() => {
+  if (props.type !== 'textarea') return 1;
+
+  // btw, `value.value` is hilarious
+  return Math.max(3, value.value.split('\n').length + 1);
+});
 </script>
 
 <template>
@@ -24,6 +31,14 @@ const props = defineProps<{
         v-text="item"
       />
     </select>
+    <textarea
+      v-else-if="props.type === 'textarea'"
+      :id="props.id"
+      v-model="value"
+      :style="{
+        height: `calc(var(--field-height-offset) + var(--field-line-height) * ${linesShown})`,
+      }"
+    />
     <input
       v-else
       :id="props.id"

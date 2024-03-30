@@ -73,6 +73,8 @@
   --field-border-width: 1px;
   --field-line-height: 1.5rem;
   --field-padding-y: var(--space-0100);
+  --field-height-offset: calc((var(--field-border-width) + var(--field-padding-y)) * 2);
+  --field-min-height: calc(var(--field-height-offset) + var(--field-line-height));
 
   /** component tokens ****************************/
   --body-color: var(--color-coal-pure);
@@ -197,7 +199,9 @@ fieldset {
   padding: var(--space-0100);
 }
 
-select, input {
+textarea,
+select,
+input {
   background-color: var(--color-sugar-pale);
   border-radius: var(--field-border-radius);
   border: var(--field-border-width) solid var(--color-ash-pure);
@@ -206,8 +210,11 @@ select, input {
 }
 
 label {
+  & > textarea,
   & > input,
   & > select {
+    min-height: var(--field-min-height);
+    resize: vertical;
     width: 100%;
   }
 }
