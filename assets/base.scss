@@ -262,4 +262,7 @@ label {
   .pl-#{$space} { padding-left: var(--space-#{$space}); }
   .px-#{$space} { padding-inline: var(--space-#{$space}); }
   .py-#{$space} { padding-block: var(--space-#{$space}); }
+
+  .gy-#{$space} { display: grid; gap: var(--space-#{$space}); }
+  .gx-#{$space} { display: grid; grid-auto-flow: column; gap: var(--space-#{$space}); }
 }
