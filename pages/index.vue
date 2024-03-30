@@ -42,7 +42,7 @@
           :key="item._path"
         >
           <NuxtLink :to="item._path">
-            {{ item.title }}
+            {{ item.title }} - {{ item.artist }}
           </NuxtLink>
         </li>
       </ul>
