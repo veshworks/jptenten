@@ -1,33 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
-  lyrics: {
-    kanji: string;
-    translation: string;
-    start: string;
-    stop: string;
-  }[];
+  doc: any;
 }>();
 
+const { song } = useSongYaml(props.doc);
+
 const player = usePlayerStore();
-
-function parseTime(timeString: string) {
-  if (timeString === '+') return Infinity;
-
-  const [minutes, seconds] = timeString.split(':').map(Number);
-  return minutes * 60 + seconds;
-}
-
-const lyrics = computed(() => {
-  return props.lyrics.map((item, index, array) => {
-    const stop = item.stop ?? array[index + 1]?.start ?? '+';
-
-    return {
-      ...item,
-      start: parseTime(item.start),
-      stop: parseTime(stop),
-    };
-  });
-});
 
 function isBetween(start: number, stop: number) {
   return player.currentTime >= start
@@ -43,7 +21,7 @@ const playAt = (time: number) => {
 <template>
   <div class="lyrics">
     <div
-      v-for="(item) in lyrics"
+      v-for="(item) in song.lyrics"
       :key="item.start"
       :class="['lyrics__line', {
         'lyrics__line--active': isBetween(item.start, item.stop)

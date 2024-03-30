@@ -1,52 +1,11 @@
 <script setup lang="ts">
-import { stringify } from 'yaml';
-
-type LyricsRaw = {
-  kanji: string;
-  translation: string;
-  start: string;
-  stop?: string;
-}[];
-
-type Lyrics = {
-  kanji: string;
-  translation: string;
-
-  start: number;
-  stop: number;
-}[];
-
 const props = defineProps<{
-  lyrics: LyricsRaw;
+  doc: any;
 }>();
 
+const { song, download } = useSongYaml(props.doc);
+
 const player = usePlayerStore();
-
-function parseTime(timeString: string) {
-  if (timeString === undefined) return 0;
-  if (timeString === '+') return Infinity;
-
-  const [minutes, seconds] = timeString.split(':').map(Number);
-  return minutes * 60 + seconds;
-}
-
-const lyricsEdit = ref<Lyrics>([]);
-
-watch(() => props.lyrics, () => {
-  lyricsEdit.value = props.lyrics.map((item, index, array) => {
-    // set '+' to stop if next.start === item.start
-    const next = array[index + 1];
-    const stop = next?.start === item.start
-      ? '+'
-      : item?.stop ?? next?.start ?? '+';
-
-    return {
-      ...item,
-      start: parseTime(item.start),
-      stop: parseTime(stop),
-    };
-  });
-}, { immediate: true });
 
 function isBetween(start: number, stop: number) {
   return player.currentTime >= start
@@ -62,8 +21,8 @@ const markStart = (index: number) => {
   const humanDelay = 0.100;
   const snap = player.currentTime - humanDelay;
 
-  const last = lyricsEdit.value[index - 1] ?? null;
-  const self = lyricsEdit.value[index];
+  const last = song.lyrics[index - 1] ?? null;
+  const self = song.lyrics[index];
 
   // Update the current line
   if (last) last.stop = snap;
@@ -74,36 +33,14 @@ const markStop = (index: number) => {
   const snap = player.currentTime;
 
   // Update the current line
-  lyricsEdit.value[index].stop = snap;
+  song.lyrics[index].stop = snap;
 };
-
-const exportLyrics = computed(() => {
-  const formatTime = (time: number) => {
-    if (time === Infinity) return '+';
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor((time % 60) * 1000) / 1000;
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  };
-
-  const yamlLines = lyricsEdit.value.map((line) => {
-    const copy = JSON.parse(JSON.stringify(line));
-
-    copy.start = formatTime(copy.start);
-    copy.stop = formatTime(copy.stop);
-
-    return copy;
-  });
-
-  return stringify({
-    lyrics: yamlLines,
-  });
-});
 </script>
 
 <template>
   <div class="lyrics">
     <div
-      v-for="(item, index) in lyricsEdit"
+      v-for="(item, index) in song.lyrics"
       :key="item.start"
       :class="['lyrics__line', {
         'lyrics__line--active': isBetween(item.start, item.stop)
@@ -133,9 +70,9 @@ const exportLyrics = computed(() => {
     </div>
   </div>
 
-  <code>
-    <pre>{{ exportLyrics }}</pre>
-  </code>
+  <button @click="download">
+    download lyric file
+  </button>
 </template>
 
 <style lang="scss" scoped>

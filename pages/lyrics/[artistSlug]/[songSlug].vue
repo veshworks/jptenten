@@ -38,11 +38,11 @@ const route = useRoute();
 
     <SongLyricsEditor
       v-if="route.query.edit"
-      :lyrics="doc.lyrics"
+      :doc="doc"
     />
     <SongLyrics
       v-else
-      :lyrics="doc.lyrics"
+      :doc="doc"
     />
   </ContentDoc>
 </template>

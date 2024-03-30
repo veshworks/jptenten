@@ -1,41 +1,16 @@
 <script setup lang="ts">
-import { stringify } from 'yaml';
-
-const doc = ref({
-  title: '',
-  artist: '',
-  player: {
-    type: 'youtube',
-    source: '',
-  },
-  lyrics: [] as {
-    kanji: string;
-    translation: string;
-    start: string;
-    stop?: string;
-  }[],
-});
+const { song, download } = useSongYaml();
 
 // download yaml file
 const onSubmit = (e: Event) => {
   e.preventDefault();
-
-  const yamlString = stringify(doc.value);
-  const blob = new Blob([yamlString], { type: 'text/yaml' });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${doc.value.artist} - ${doc.value.title}.yaml`;
-  a.click();
-
-  URL.revokeObjectURL(url);
+  download();
 };
 
 const lyrics = computed({
-  get: () => doc.value.lyrics.map(line => line.kanji).join('\n'),
-  set: (value: any) => {
-    doc.value.lyrics = value.split('\n').map((kanji: string) => ({
+  get: () => song.value.lyrics.map(line => line.kanji).join('\n'),
+  set: (value: string) => {
+    song.value.lyrics = value.split('\n').map((kanji: string) => ({
       kanji,
       translation: '',
       start: '+',
@@ -44,11 +19,11 @@ const lyrics = computed({
 });
 
 const translation = computed({
-  get: () => doc.value.lyrics.map(line => line.translation).join('\n'),
+  get: () => song.value.lyrics.map(line => line.translation).join('\n'),
   set: (value: any) => {
     const translations = value.split('\n');
 
-    doc.value.lyrics.forEach((line, index) => {
+    song.value.lyrics.forEach((line, index) => {
       line.translation = translations[index];
     });
   },
@@ -67,14 +42,14 @@ const translation = computed({
     >
       <UiInput
         id="artist"
-        v-model="doc.artist"
+        v-model="song.artist"
         label="Artist"
         type="text"
       />
 
       <UiInput
         id="title"
-        v-model="doc.title"
+        v-model="song.title"
         label="Title"
         type="text"
       />
@@ -84,7 +59,7 @@ const translation = computed({
 
         <UiInput
           id="player-type"
-          v-model="doc.player.type"
+          v-model="song.player.type"
           label="type"
           type="select"
           :options="['youtube']"
@@ -92,7 +67,7 @@ const translation = computed({
 
         <UiInput
           id="player-source"
-          v-model="doc.player.source"
+          v-model="song.player.source"
           label="source"
           type="text"
         />
