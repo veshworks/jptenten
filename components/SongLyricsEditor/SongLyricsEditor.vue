@@ -70,7 +70,10 @@ const markStop = (index: number) => {
     </div>
   </div>
 
-  <button @click="download">
+  <button
+    class="mt-0300"
+    @click="download"
+  >
     download lyric file
   </button>
 </template>
@@ -94,8 +97,12 @@ const markStop = (index: number) => {
     gap: var(--space-0050);
   }
 
-  &:hover .lyrics__line-actions {
-    display: grid;
+  &:hover {
+    background-color: var(--color-sugar-pure);
+
+    .lyrics__line-actions {
+      display: grid;
+    }
   }
 }
 

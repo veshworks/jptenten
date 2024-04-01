@@ -61,8 +61,12 @@ const playAt = (time: number) => {
     display: none;
   }
 
-  &:hover button {
-    display: block;
+  &:hover {
+    background-color: var(--color-sugar-pure);
+
+    button {
+      display: block;
+    }
   }
 }
 
