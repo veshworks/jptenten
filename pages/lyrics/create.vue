@@ -8,22 +8,23 @@ const onSubmit = (e: Event) => {
 };
 
 const lyrics = computed({
-  get: () => song.value.lyrics.map(line => line.kanji).join('\n'),
+  get: () => song.lyrics.map(line => line.kanji).join('\n'),
   set: (value: string) => {
-    song.value.lyrics = value.split('\n').map((kanji: string) => ({
+    song.lyrics = value.split('\n').map((kanji: string) => ({
       kanji,
       translation: '',
-      start: '+',
+      start: Infinity,
+      stop: Infinity,
     }));
   },
 });
 
 const translation = computed({
-  get: () => song.value.lyrics.map(line => line.translation).join('\n'),
+  get: () => song.lyrics.map(line => line.translation).join('\n'),
   set: (value: any) => {
     const translations = value.split('\n');
 
-    song.value.lyrics.forEach((line, index) => {
+    song.lyrics.forEach((line, index) => {
       line.translation = translations[index];
     });
   },
